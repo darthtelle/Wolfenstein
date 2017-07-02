@@ -12,6 +12,8 @@ public class MaterialAnimator : MonoBehaviour
 	private MaterialPropertyBlock m_PropertyBlock;
 	protected Coroutine m_AnimationCoroutine;
 
+	public bool IsAnimating { get { return (m_AnimationCoroutine != null); } }
+
 	private void Awake()
 	{
 		m_PropertyBlock = new MaterialPropertyBlock();
@@ -64,10 +66,10 @@ public class MaterialAnimator : MonoBehaviour
 		int frameCount = animation.GetAnimation.Length;
 		float frameLength = animation.GetTime / frameCount;
 
+		Timer timer = new Timer(frameLength);
+
 		while(frameIndex < frameCount)
 		{
-			Timer timer = new Timer(frameLength);
-
 			m_PropertyBlock.SetTexture("_MainTex", animation.GetAnimation[frameIndex]);
 			m_Renderer.SetPropertyBlock(m_PropertyBlock);
 
@@ -76,6 +78,7 @@ public class MaterialAnimator : MonoBehaviour
 				yield return null;
 			}
 
+			timer.Reset();
 			frameIndex++;
 		}
 

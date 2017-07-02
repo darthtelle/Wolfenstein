@@ -20,11 +20,11 @@ public class EnemyHealth : CharacterHealth
 
 		if(m_HealthCount <= 0)
 		{
-			m_Animator.TriggerDeath();
+			m_Animator.Death();
 		}
 		else
 		{
-			m_Animator.TriggerShot();
+			m_Animator.Shot();
 		}
 	}
 }

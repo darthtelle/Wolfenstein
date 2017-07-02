@@ -3,31 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(EnemyWeapon))]
+[RequireComponent(typeof(EnemyHealth))]
+[RequireComponent(typeof(EnemyAnimator))]
+[RequireComponent(typeof(EnemyStateController))]
 public class EnemyController : MonoBehaviour
 {
 	[SerializeField]
 	private Enemy m_EnemyData;
+	public Enemy GetData { get { return m_EnemyData; } }
 
-	//private PlayerMovement m_Movement;
 	private EnemyWeapon m_Weapon;
 	private EnemyHealth m_Health;
 	private EnemyAnimator m_Animator;
+	private EnemyStateController m_StateController;
+
+	public EnemyAnimator GetAnimator { get { return m_Animator; } }
 
 	private void Awake()
 	{
-		//m_Movement = gameObject.GetRequiredComponent<PlayerMovement>();
 		m_Weapon = gameObject.GetRequiredComponent<EnemyWeapon>();
 		m_Health = gameObject.GetRequiredComponent<EnemyHealth>();
 		m_Animator = gameObject.GetRequiredComponent<EnemyAnimator>();
+		m_StateController = gameObject.GetRequiredComponent<EnemyStateController>();
 	}
 
 	private void Start()
 	{
 		m_Weapon.Initialise(m_EnemyData.GetWeapon);
 		m_Health.Initialise(m_EnemyData.GetHP);
+		m_StateController.Initialise(this);
 	}
 
+	private void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.Y))
+		{
+			m_Animator.WalkForward();
+		}
 
+		m_StateController.UpdateState();
+	}
 
 
 

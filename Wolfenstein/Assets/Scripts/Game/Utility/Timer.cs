@@ -19,4 +19,9 @@ public class Timer
 		m_Timer += Time.deltaTime;
 		return (m_Timer >= m_TimeLimit);
 	}
+
+	public void Reset()
+	{
+		m_Timer = 0.0f;
+	}
 }

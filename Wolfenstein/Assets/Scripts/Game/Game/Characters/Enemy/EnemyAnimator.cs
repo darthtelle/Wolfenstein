@@ -8,6 +8,12 @@ public class EnemyAnimator : MaterialAnimator
 	private AnimData m_Idle;
 
 	[SerializeField]
+	private AnimData m_WalkForward;
+
+	[SerializeField]
+	private AnimData m_Attack;
+
+	[SerializeField]
 	private AnimData m_Shot;
 
 	[SerializeField]
@@ -15,14 +21,28 @@ public class EnemyAnimator : MaterialAnimator
 
 #region Animations
 
-	public void TriggerShot()
+	public void WalkForward()
+	{
+		ClearQueue();
+		PlayAnimation(m_WalkForward);
+		QueueAnimation(m_Idle);
+	}
+
+	public void Attack()
+	{
+		ClearQueue();
+		PlayAnimation(m_Attack);
+		QueueAnimation(m_Idle);
+	}
+
+	public void Shot()
 	{
 		ClearQueue();
 		PlayAnimation(m_Shot);
 		QueueAnimation(m_Idle);
 	}
 
-	public void TriggerDeath()
+	public void Death()
 	{
 		ClearQueue();
 		QueueAnimation(m_Death);

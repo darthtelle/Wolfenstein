@@ -10,8 +10,8 @@ public abstract class Enemy : ScriptableObject
 	public int GetHP { get { return m_HP; } }
 
 	[SerializeField]
-	private int m_Speed;
-	public int GetSpeed { get { return m_Speed; } }
+	private float m_Speed;
+	public float GetSpeed { get { return m_Speed; } }
 
 	[SerializeField]
 	private bool m_Pain;

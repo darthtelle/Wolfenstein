@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Game\Game\Characters\Enemy\EnemyAnimator.cs" />
      <Compile Include="Assets\Scripts\Game\Game\Characters\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Game\Game\Characters\Enemy\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Game\Game\Characters\Enemy\EnemyStateController.cs" />
      <Compile Include="Assets\Scripts\Game\Game\Characters\Enemy\EnemyWeapon.cs" />
      <Compile Include="Assets\Scripts\Game\Game\Characters\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Game\Game\Characters\Player\PlayerHealth.cs" />
@@ -75,8 +76,18 @@
      <Compile Include="Assets\Scripts\Game\Utility\Events\EventManager.cs" />
      <Compile Include="Assets\Scripts\Game\Utility\GenericExtensions.cs" />
      <Compile Include="Assets\Scripts\Game\Utility\IntVector.cs" />
+     <Compile Include="Assets\Scripts\Game\Utility\Layers.cs" />
      <Compile Include="Assets\Scripts\Game\Utility\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Game\Utility\Tags.cs" />
      <Compile Include="Assets\Scripts\Game\Utility\Timer.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\Decisions\Decision.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\Decisions\PlayerInRangeDecision.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\Decisions\PlayerVisibleDecision.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\Decisions\Transition.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\States\ChaseState.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\States\EnemyState.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\States\PatrolState.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\AI\States\ShootState.cs" />
      <Compile Include="Assets\Scripts\ScriptableObjects\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\ScriptableObjects\Enemies\Guard.cs" />
      <Compile Include="Assets\Scripts\ScriptableObjects\Items\Ammo.cs" />
